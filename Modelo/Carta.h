@@ -12,6 +12,12 @@ Colaboradores:
     - Jugador contiene objetos de la clase Carta.
     - Crupier contiene objetos de la clase Carta.
     - Baraja contiene objetos de la clase Carta.
+-------------------------------------------------------------------------------
+
+Creado por:               Juan Sebastian Valencia Quinchua
+Fecha de creación:        16/11/2025
+Fecha de última modificación: 16/11/2025
+Versión:                  1.0.0
 ===============================================================================
 */
 

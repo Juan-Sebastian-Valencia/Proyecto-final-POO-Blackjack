@@ -12,6 +12,12 @@ Responsabilidades:
 Colaboradores:            
     - Hereda a Jugador.
     - Hereda a crupier.
+-------------------------------------------------------------------------------
+
+Creado por:               Juan Sebastian Valencia Quinchua
+Fecha de creación:        16/11/2025
+Fecha de última modificación: 16/11/2025
+Versión:                  1.0.0
 ===============================================================================
 */
 

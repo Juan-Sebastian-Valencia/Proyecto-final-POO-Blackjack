@@ -12,6 +12,12 @@ Responsabilidades:
 Colaboradores:            
     - Hereda de Persona.
     - Contiene objetos de la clase Carta.
+-------------------------------------------------------------------------------
+
+Creado por:               Juan Sebastian Valencia Quinchua
+Fecha de creación:        16/11/2025
+Fecha de última modificación: 17/11/2025
+Versión:                  1.0.0
 ===============================================================================
 */
 
@@ -37,6 +43,7 @@ class Jugador : public Persona {
         std::vector<Carta> vaciarManoDividir();
         void hacerApuesta(double apuesta);
         void doblarApuesta();
+        void calcularPuntaje();
 
         bool validarApuesta(double apuesta) const;
 };

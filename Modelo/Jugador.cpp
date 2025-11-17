@@ -34,9 +34,17 @@ void Jugador::doblarApuesta() {
     // se le resta la mitad ya que la apuesta ya se habia restado una vez
 }
 
+void Jugador::calcularPuntaje(){
+    for(Carta carta : mano){
+        int valorAux = carta.getValor();
+        setPuntaje(valorAux);
+    }
+}
+
 
 // Método que luego ira en la clase Juego
 bool Jugador::validarApuesta(double apuesta) const {
     if (apuesta > 0 && apuesta <= getSaldo()) return true;
     else return false;
 }
+
