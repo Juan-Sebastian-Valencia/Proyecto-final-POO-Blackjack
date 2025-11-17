@@ -2,11 +2,54 @@
 ===============================================================================
                                 TARJETA CRC
 ===============================================================================
-Nombre de la clase:       VistaConsola
+Nombre de la clase:         VistaConsola
 Responsabilidades:        
     ...
 
 Colaboradores:            
     ...
+-------------------------------------------------------------------------------
+
+Creado por:               Juan Sebastian Valencia Quinchua
+Fecha de creación:        17/11/2025
+Fecha de última modificación: 17/11/2025
+Versión:                  1.0.0
 ===============================================================================
 */
+
+#ifndef VISTA_VISTACONSOLA_H
+#define VISTA_VISTACONSOLA_H
+
+#include "Modelo/Carta.h"
+#include "Modelo/Jugador.h"
+#include "Modelo/Crupier.h"
+#include "Modelo/Validaciones.h"
+#include <string>
+#include <iostream>
+
+class VistaConsola{
+    private:
+        Validaciones* validaciones;
+
+    public:
+        // Métodos para recibir inforamción (inputs)
+        std::string pedirNombre();
+        int pedirEdad();
+        double pedirApuesta(const Jugador& jugador);
+        int menuPrincipal();
+        int menuJuego();
+        bool continuarJugando();
+        
+        // Métodos para mostrar información (ouputs)
+        void mostrarCarta(const Carta& carta);
+        void mostrarMano(const std::vector<Carta>& mano);
+        void mostrarJugador(const Jugador& jugador);
+        void mostrarCrupier(const Crupier& crupier);
+        void mostrarRestriccionEdad();
+        void mostrarDoblar(Jugador& jugador);
+        void mensajeGanador();
+        void mensajePerdedor();
+        void mensajeEmpate();
+};
+
+#endif // VISTA_VISTACONSOLA_H

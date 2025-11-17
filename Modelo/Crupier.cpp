@@ -28,9 +28,8 @@ void Crupier::calcularPuntaje(){
 
 void Crupier::logicaCrupier(){
     calcularPuntaje();
-    if(puntaje < 17){
+    while(puntaje < 17){
         recibirCarta();
         calcularPuntaje();
     }
 }
-
