@@ -23,7 +23,7 @@ Versión:                  1.0.0
 ===============================================================================
 */
 
-#ifndef MOLE_CRUPIER_H
+#ifndef MODELO_CRUPIER_H
 #define MODELO_CRUPIER_H
 
 #include "Persona.h"
@@ -37,9 +37,10 @@ class Crupier : public Persona {
         Baraja baraja;
 
     public:
-        Crupier();
+        Crupier(Baraja baraja);
         std::vector<Carta> getMano() const;
         void repartirCarta(Jugador& jugador);
+        void repartirCartaManoDividir(Jugador& jugador);
         void repartirCartasInicioJuego(Jugador& jugador);
         void recibirCarta();
         void calcularPuntaje();

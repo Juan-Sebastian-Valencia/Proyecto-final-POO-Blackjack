@@ -26,6 +26,7 @@ Versión:                  1.0.0
 #include "Modelo/Validaciones.h"
 #include <string>
 #include <iostream>
+#include <cstdlib>  // Para la función system
 
 class VistaConsola{
     private:
@@ -38,6 +39,8 @@ class VistaConsola{
         double pedirApuesta(const Jugador& jugador);
         int menuPrincipal();
         int menuJuego();
+        int menuDividir();
+        int menuDividirCambioMano();
         bool continuarJugando();
         
         // Métodos para mostrar información (ouputs)
@@ -45,11 +48,15 @@ class VistaConsola{
         void mostrarMano(const std::vector<Carta>& mano);
         void mostrarJugador(const Jugador& jugador);
         void mostrarCrupier(const Crupier& crupier);
-        void mostrarRestriccionEdad();
-        void mostrarDoblar(Jugador& jugador);
+        void mostrarValidacionDoblar(Jugador& jugador);
+        void mostrarOpcionInvalida();
         void mensajeGanador();
+        void mensajeGanadorPorBlackjack();
         void mensajePerdedor();
         void mensajeEmpate();
+        void saliendo();
+
+        void limpiarConsola();
 };
 
 #endif // VISTA_VISTACONSOLA_H

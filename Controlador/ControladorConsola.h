@@ -16,12 +16,12 @@ Colaboradores:
 
 Creado por:               Juan Sebastian Valencia Quinchua
 Fecha de creación:        17/11/2025
-Fecha de última modificación: 17/11/2025
+Fecha de última modificación: 18/11/2025
 Versión:                  1.0.0
 ===============================================================================
 */
 
-#ifndef CONTROLADOR:CONTROLADORCONSOLA_H
+#ifndef CONTROLADOR_CONTROLADORCONSOLA_H
 #define CONTROLADOR_CONTROLADORCONSOLA_H
 
 #include "Modelo/Jugador.h"
@@ -37,14 +37,12 @@ class ControladorConsola {
     public:
         ControladorConsola(Jugador* jugador, Crupier* crupier, VistaConsola* vista);
         void actualizarPuntajes();
-        bool determinarEmpate();
-        bool determinarGanador();
-        bool blackjackJugador();
-        bool blackjackCrupier();
+        void determinarGanador();
         void inicializarJugador();
+        void crupierJugar();
         void iniciarPartida();
-        void iniciarJuego();
         void dividirApuesta();
+        void iniciarJuego();
 };
 
 #endif // CONTROLADOR_CONTROLADORCONSOLA_H

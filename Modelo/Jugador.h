@@ -44,8 +44,6 @@ class Jugador : public Persona {
         void hacerApuesta(double apuesta);
         void doblarApuesta();
         void calcularPuntaje();
-
-        bool validarApuesta(double apuesta) const;
 };
 
 #endif // MODELO_JUGADOR_H

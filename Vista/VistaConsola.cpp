@@ -19,7 +19,7 @@ int VistaConsola::pedirEdad(){
     std::cout<< "Digite su edad: ";
     std::cin>>edadAux;
 
-    while(validaciones->validarEdad(edadAux)){
+    while(!validaciones->validarEdad(edadAux)){
         std::cout<<"Edad fuera de rango, porfavor digitela nuevamente: ";
         std::cin>>edadAux;
     }
@@ -32,7 +32,7 @@ double VistaConsola::pedirApuesta(const Jugador& jugador){
     std::cout<<"Digite su apuesta: ";
     std::cin>>apuestaAux;
 
-    while(validaciones->validarApuesta(apuestaAux, jugador)){
+    while(!validaciones->validarApuesta(apuestaAux, jugador)){
         std::cout<<"Apuesta mayor que el saldo. Porfavor digite su apuesta nuevamente: ";
         std::cin>>apuestaAux;
     }
@@ -42,7 +42,7 @@ double VistaConsola::pedirApuesta(const Jugador& jugador){
 
 int VistaConsola::menuPrincipal(){
     int opcion;
-    std::cout<<"===== BIENVENIDO A BLACKJACK PARADICE =====\n\n";
+    std::cout<<"\n\n===== BIENVENIDO A BLACKJACK PARADICE =====\n\n";
     std::cout<<"Elija una opción\n";
     std::cout<<"1. Iniciar partida. \n";
     std::cout<<"2. Ver puntuación maxima\n";
@@ -100,14 +100,14 @@ void VistaConsola::mostrarCrupier(const Crupier& crupier){
     mostrarMano(crupier.getMano());
 }
 
-void VistaConsola::mostrarRestriccionEdad(){
-    std::cout<<"Los menores de edad no pueden jugar este juego.\n";
-    std::cout<<"valla estudie. digo, precione una tecla para continuar";
-}
-
 void VistaConsola::mensajeGanador(){
     std::cout<<"  ¡FELICITACIONES!"<<std::endl;
     std::cout<<"¡GANASTE LA PARTIDA!"<<std::endl;
+}
+
+void VistaConsola::mensajeGanadorPorBlackjack(){
+    std::cout<<"        ¡FELICITACIONES!"<<std::endl;
+    std::cout<<"¡GANASTE LA PARTIDA POR BLACKJACK!"<<std::endl;
 }
 
 void VistaConsola::mensajePerdedor(){
@@ -120,10 +120,49 @@ void VistaConsola::mensajeEmpate(){
     std::cout<<"¡MÁS SUERTE EN LA PROXIMA PARTIDA!"<<std::endl;
 }
 
-void VistaConsola::mostrarDoblar(Jugador& jugador){
+void VistaConsola::mostrarValidacionDoblar(Jugador& jugador){
     if(validaciones->validarDoblar(jugador)){
         jugador.doblarApuesta();
     }else{
         std::cout<<"Saldo Insuficiente"<<std::endl;
     }
+}
+
+int VistaConsola::menuDividir(){
+    int opcion;
+    std::cout<<"Elija una opción\n";
+    std::cout<<"1. Pedir.\n";
+    std::cout<<"2. Plantarse.\n";
+    std::cout<<"3. Doblar.\n";
+    std::cout<<"4. Cambiar de mano\n";
+    std::cout<<"Digite su elección: ";
+    std::cin>>opcion;
+    return opcion;
+}
+
+int VistaConsola::menuDividirCambioMano(){
+    int opcion;
+    std::cout<<"Elija una opción\n";
+    std::cout<<"1. Pedir.\n";
+    std::cout<<"2. Plantarse.\n";
+    std::cout<<"3. Doblar.\n";
+    std::cout<<"Digite su elección: ";
+    std::cin>>opcion;
+    return opcion;
+}
+
+void VistaConsola::mostrarOpcionInvalida(){
+    std::cout<<"Opción no valida"<<std::endl;
+}
+
+void VistaConsola::limpiarConsola(){
+    #ifndef _WIN32
+        system("cls");
+    #else   
+      //  system("clear");
+    #endif
+}
+
+void VistaConsola::saliendo(){
+    std::cout<<"Saliendo juego... "<<std::endl;
 }

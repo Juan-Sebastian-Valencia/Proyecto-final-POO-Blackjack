@@ -19,7 +19,6 @@ bool Validaciones::validarApuesta(const double apuesta, const Jugador& jugador){
 }
 
 bool Validaciones::validarDoblar(const Jugador& jugador){
-    if(validarApuesta(jugador.getApuesta(), jugador)){
-        return true;
-    }else return false;
+    if(validarApuesta(jugador.getApuesta(), jugador)) return true;
+    else return false;
 }

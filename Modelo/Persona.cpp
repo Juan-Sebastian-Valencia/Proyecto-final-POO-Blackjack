@@ -1,6 +1,6 @@
 #include "Persona.h"
 
-Persona::Persona() : nombre(""), edad(0), puntaje(0), saldo(2000.0), apuesta(0.0) {}
+Persona::Persona() : nombre(""), edad(0), puntaje(0), saldo(2000), apuesta(0.0) {}
 
 // Getters
 std::string Persona::getNombre() const { return nombre;}

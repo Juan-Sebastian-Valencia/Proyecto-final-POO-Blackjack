@@ -10,6 +10,7 @@ Baraja::Baraja(){
             if(numero == 1) valor = 11;
             if(numero > 10) valor = 10;
             Carta carata(palo, numero, valor);
+            barajaInicial.push_back(carata);
         }
     }
 }

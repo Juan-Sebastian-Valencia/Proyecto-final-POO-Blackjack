@@ -42,9 +42,3 @@ void Jugador::calcularPuntaje(){
 }
 
 
-// Método que luego ira en la clase Juego
-bool Jugador::validarApuesta(double apuesta) const {
-    if (apuesta > 0 && apuesta <= getSaldo()) return true;
-    else return false;
-}
-

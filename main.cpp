@@ -6,11 +6,12 @@
 int main(){
 
     Jugador jugador;
-    Crupier crupier;
-    VistaConsola vista;
+    Baraja baraja;
+    Crupier crupier(baraja);
+    VistaConsola vista; 
     ControladorConsola controlador(&jugador, &crupier, &vista);
 
-    controlador.iniciarPartida();
+    controlador.iniciarJuego();
 
 
 

@@ -1,11 +1,15 @@
 #include "Crupier.h"
 
-Crupier::Crupier() : Persona() {}
+Crupier::Crupier(Baraja baraja) : Persona(), puntaje(0.0), mano({}), baraja(baraja) {}
 
 std::vector<Carta> Crupier::getMano() const { return mano;}
 
 void Crupier::repartirCarta(Jugador& jugador){
     jugador.recibirCartaMano(baraja.sacarCartaBarajaInicial());
+}
+
+void Crupier::repartirCartaManoDividir(Jugador& jugador){
+    jugador.recibirCartaManoDividir(baraja.sacarCartaBarajaInicial());
 }
 
 void Crupier::repartirCartasInicioJuego(Jugador& jugador){
