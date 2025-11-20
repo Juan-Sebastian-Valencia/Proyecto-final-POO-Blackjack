@@ -30,6 +30,7 @@ class Persona {
     private:
         std::string nombre;
         int edad;
+        int id;  // Para identificar a cada jugador en la base de datos
         int puntaje;
         double saldo;
         double apuesta;
@@ -38,12 +39,14 @@ class Persona {
         Persona();
         std::string getNombre() const;
         int getEdad() const;
+        int getId() const;
         int getPuntaje() const;
         double getSaldo() const;
         double getApuesta() const;
 
         void setNombre(const std::string& nombre);
         void setEdad(int edad);
+        void setId(int id);
         void setPuntaje(int puntaje);
         void setSaldo(double saldo);
         void setApuesta(double apuesta);
