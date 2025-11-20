@@ -164,5 +164,5 @@ void VistaConsola::limpiarConsola(){
 }
 
 void VistaConsola::saliendo(){
-    std::cout<<"Saliendo juego... "<<std::endl;
+    std::cout<<"Saliendo del juego... "<<std::endl;
 }

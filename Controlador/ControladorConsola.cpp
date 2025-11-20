@@ -43,6 +43,7 @@ void ControladorConsola::iniciarPartida(){
         
         vista->limpiarConsola();
         vista->mostrarJugador(*jugador); 
+
         int opcion = vista->menuJuego();
         if(opcion == 1) crupier->repartirCarta(*jugador);
         else if(opcion == 2) break;
@@ -56,7 +57,9 @@ void ControladorConsola::iniciarPartida(){
             continue;
         } 
     }
+    vista->mostrarCrupier(*crupier);
     crupierJugar();
+    vista->mostrarCrupier(*crupier);
     determinarGanador();
     //Implementar el mecanismo para jugar varias veces
 }             

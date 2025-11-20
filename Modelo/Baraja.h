@@ -25,6 +25,8 @@ Versión:                  1.0.0
 
 #include "Carta.h"
 #include <vector>
+#include <random>  // Para la función std::random_device y std::mt19937
+#include <algorithm> // Para std::shuffle
 
 class Baraja {
     private:

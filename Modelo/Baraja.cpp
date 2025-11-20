@@ -23,7 +23,7 @@ Carta Baraja::sacarCartaBarajaInicial(){
 
 Carta Baraja::sacarCartaBarajaSegundaria(){
     Carta cartaAux = barajaInicial.back();
-    barajaInicial.pop_back();
+    barajaSegundaria.pop_back();
     return cartaAux;
 }
 
@@ -38,11 +38,11 @@ void Baraja::recibirCartaBarajaSegundaria(const Carta& carta){
 void Baraja::Barajar(){
     for(Carta carta : barajaSegundaria){
         barajaInicial.push_back(carta);
-        barajaSegundaria.erase(barajaInicial.begin());
     }
+    barajaSegundaria.clear();
 
+    std::random_device rd;
+    std::mt19937 g(rd());
 
-    // fALTA IMPLEMENTAR EL ALGORITMO DE BARAJAR
-
-    
+    std::shuffle(barajaInicial.begin(), barajaInicial.end(), g);
 }

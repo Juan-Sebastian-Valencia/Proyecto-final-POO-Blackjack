@@ -24,10 +24,11 @@ void Crupier::recibirCarta(){
 }
 
 void Crupier::calcularPuntaje(){
+    int valorAux = 0;
     for(Carta carta : mano){
-        int valorAux = carta.getValor();
-        setPuntaje(valorAux);
+        valorAux += carta.getValor();
     }
+    setPuntaje(valorAux);
 }
 
 void Crupier::logicaCrupier(){
@@ -37,3 +38,4 @@ void Crupier::logicaCrupier(){
         calcularPuntaje();
     }
 }
+
