@@ -57,6 +57,7 @@ class VistaConsola{
         void saliendo();
 
         void limpiarConsola();
+        void PresionarTeclaParaContinuar();
 };
 
 #endif // VISTA_VISTACONSOLA_H

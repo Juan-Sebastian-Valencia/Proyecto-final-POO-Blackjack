@@ -79,9 +79,12 @@ void VistaConsola::mostrarCarta(const Carta& carta){
 }
 
 void VistaConsola::mostrarMano(const std::vector<Carta>& mano){
+    int i = 1;
     for(Carta carta : mano){
+        std::cout<<" Carta: "<< i <<std::endl;
         mostrarCarta(carta);
         std::cout<<"\n";
+        i++;
     }
 }
 
@@ -125,6 +128,7 @@ void VistaConsola::mostrarValidacionDoblar(Jugador& jugador){
         jugador.doblarApuesta();
     }else{
         std::cout<<"Saldo Insuficiente"<<std::endl;
+        PresionarTeclaParaContinuar();
     }
 }
 
@@ -156,13 +160,19 @@ void VistaConsola::mostrarOpcionInvalida(){
 }
 
 void VistaConsola::limpiarConsola(){
-    #ifndef _WIN32
+    #ifdef _WIN32
         system("cls");
     #else   
-      //  system("clear");
+        system("clear");
     #endif
+    std::cout<<" Se limpio la consola" <<std::endl;
 }
 
 void VistaConsola::saliendo(){
     std::cout<<"Saliendo del juego... "<<std::endl;
+}
+
+void VistaConsola::PresionarTeclaParaContinuar(){
+    std::cout<<"Presione una tecla para continuar..."<<std::endl;
+    system("pause");
 }

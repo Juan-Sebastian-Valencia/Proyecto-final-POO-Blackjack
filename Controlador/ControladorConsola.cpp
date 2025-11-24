@@ -104,19 +104,21 @@ void ControladorConsola::dividirApuesta(){  // refactorizar esta función
 void ControladorConsola::iniciarJuego(){
     while(true){
         vista->limpiarConsola();
-        if(vista->menuPrincipal() == 1){
+        int opcion = vista->menuPrincipal();
+
+        if(opcion == 1){
             iniciarPartida();
             continue;
         }
-        else if(vista->menuPrincipal() == 2){
+        else if(opcion == 2){
             // Falta crear he implementar.
             continue;
         }
-        else if(vista->menuPrincipal() == 3){
+        else if(opcion == 3){
             // Falta crear he implementar.
             continue;
         }
-        else if(vista->menuPrincipal() == 4){
+        else if(opcion == 4){
             vista->saliendo();
             break; 
         }
