@@ -2,8 +2,8 @@ name: Compilar proyecto
 
 # Cuándo se ejecuta
 on:
-  push:            # cada vez que haces un push
-  pull_request:    # cada vez que abres o actualizas un PR
+  push:            # cada vez que se hace un push
+  pull_request:    # cada vez que se abres o actualiza un PR
 
 jobs:
   build:
@@ -18,7 +18,7 @@ jobs:
       - name: Instalar herramientas de compilación
         run: sudo apt-get update && sudo apt-get install -y g++ cmake
 
-      # 3. Configura el proyecto (usa tu CMakeLists.txt)
+      # 3. Configura el proyecto, usa el CMakeLists.txt del proyecto
       - name: Configurar proyecto
         run: cmake -S . -B build
 
