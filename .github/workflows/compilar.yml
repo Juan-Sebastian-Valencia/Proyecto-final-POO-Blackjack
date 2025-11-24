@@ -1,0 +1,27 @@
+name: Compilar proyecto
+
+# Cuándo se ejecuta
+on:
+  push:            # cada vez que haces un push
+  pull_request:    # cada vez que abres o actualizas un PR
+
+jobs:
+  build:
+    runs-on: ubuntu-latest     # máquina donde se ejecuta
+
+    steps:
+      # 1. Descarga el código del repositorio
+      - name: Obtener código
+        uses: actions/checkout@v4
+
+      # 2. Instala herramientas necesarias para compilar C++
+      - name: Instalar herramientas de compilación
+        run: sudo apt-get update && sudo apt-get install -y g++ cmake
+
+      # 3. Configura el proyecto (usa tu CMakeLists.txt)
+      - name: Configurar proyecto
+        run: cmake -S . -B build
+
+      # 4. Compila el proyecto
+      - name: Compilar
+        run: cmake --build build
