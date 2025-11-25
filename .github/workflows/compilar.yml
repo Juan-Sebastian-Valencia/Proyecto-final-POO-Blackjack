@@ -9,7 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-latest     # Sistema operativo donde corren los pasos
 
-    steps:
+    steps:  # Se ejetuan en orden
 
       # 1. Descargar el código del repositorio
       - name: Obtener código
