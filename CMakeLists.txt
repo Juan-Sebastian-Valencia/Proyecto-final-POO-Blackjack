@@ -14,7 +14,7 @@ set(SOURCES
         Modelo/Jugador.cpp
         Modelo/Persona.cpp
         Modelo/Validaciones.cpp
-        Modelo/DataBase/DataBaseTexto.cpp
+        #Modelo/DataBase/DataBaseTexto.cpp
 
         Vista/VistaConsola.cpp
 )

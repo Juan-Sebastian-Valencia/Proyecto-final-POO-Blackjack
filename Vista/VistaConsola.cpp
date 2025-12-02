@@ -45,9 +45,7 @@ int VistaConsola::menuPrincipal(){
     std::cout<<"\n\n===== BIENVENIDO A BLACKJACK PARADICE =====\n\n";
     std::cout<<"Elija una opción\n";
     std::cout<<"1. Iniciar partida. \n";
-    std::cout<<"2. Ver puntuación maxima\n";
-    std::cout<<"3. Ver los ultimos 5 puntajes.\n";
-    std::cout<<"4. Salir.\n";
+    std::cout<<"2. Salir.\n";
     std::cout<<"Digite su elección: ";
     std::cin>>opcion;
     return opcion;
@@ -165,7 +163,6 @@ void VistaConsola::limpiarConsola(){
     #else   
         system("clear");
     #endif
-    std::cout<<" Se limpio la consola" <<std::endl;
 }
 
 void VistaConsola::saliendo(){

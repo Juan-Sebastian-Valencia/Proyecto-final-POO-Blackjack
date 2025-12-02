@@ -57,11 +57,13 @@ void ControladorConsola::iniciarPartida(){
             continue;
         } 
     }
-    vista->mostrarCrupier(*crupier);
-    crupierJugar();
-    vista->mostrarCrupier(*crupier);
+    while (crupier->getPuntaje() < 17) {
+        crupierJugar();
+        vista->limpiarConsola();
+        vista->mostrarJugador(*jugador);
+        vista->mostrarCrupier(*crupier);
+    }
     determinarGanador();
-    //Implementar el mecanismo para jugar varias veces
 }             
 
 void ControladorConsola::dividirApuesta(){  // refactorizar esta función
@@ -111,14 +113,6 @@ void ControladorConsola::iniciarJuego(){
             continue;
         }
         else if(opcion == 2){
-            // Falta crear he implementar.
-            continue;
-        }
-        else if(opcion == 3){
-            // Falta crear he implementar.
-            continue;
-        }
-        else if(opcion == 4){
             vista->saliendo();
             break; 
         }
