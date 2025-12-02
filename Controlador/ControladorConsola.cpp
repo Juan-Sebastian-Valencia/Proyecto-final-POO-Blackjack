@@ -1,7 +1,7 @@
 #include "ControladorConsola.h"
 
-ControladorConsola::ControladorConsola(Jugador* jugador, Crupier* crupier, VistaConsola* vista) :
-                    jugador(jugador), crupier(crupier), vista(vista) {}
+ControladorConsola::ControladorConsola(Jugador* jugador, Crupier* crupier, VistaConsola* vista, Baraja& baraja) :
+                    jugador(jugador), crupier(crupier), vista(vista), baraja(baraja) {}
 
 void ControladorConsola::actualizarPuntajes(){
     jugador->calcularPuntaje();
@@ -39,6 +39,7 @@ void ControladorConsola::iniciarPartida(){
     jugador->hacerApuesta(vista->pedirApuesta(*jugador)); // Desrreferenciamos el puntero a jugador
     crupier->repartirCartasInicioJuego(*jugador); 
 
+    baraja.Barajar();
     while(true){
         
         vista->limpiarConsola();
@@ -64,6 +65,15 @@ void ControladorConsola::iniciarPartida(){
         vista->mostrarCrupier(*crupier);
     }
     determinarGanador();
+
+    std::vector<Carta> cartasJugador = jugador->vaciarMano();
+    for (const Carta& c : cartasJugador)
+        baraja.recibirCartaBarajaSegundaria(c);
+
+    std::vector<Carta> cartasCrupier = crupier->vaciarMano();
+    for (const Carta& c : cartasCrupier)
+        baraja.recibirCartaBarajaSegundaria(c);
+
 }             
 
 void ControladorConsola::dividirApuesta(){  // refactorizar esta función

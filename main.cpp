@@ -9,10 +9,7 @@ int main(){
     Baraja baraja;
     Crupier crupier(baraja);
     VistaConsola vista; 
-    ControladorConsola controlador(&jugador, &crupier, &vista);
+    ControladorConsola controlador(&jugador, &crupier, &vista, baraja);
 
     controlador.iniciarJuego();
-
-
-
 }

@@ -33,9 +33,10 @@ class ControladorConsola {
         Jugador* jugador;
         Crupier* crupier;
         VistaConsola* vista;
+        Baraja& baraja;
 
     public:
-        ControladorConsola(Jugador* jugador, Crupier* crupier, VistaConsola* vista);
+        ControladorConsola(Jugador* jugador, Crupier* crupier, VistaConsola* vista, Baraja& baraja);
         void actualizarPuntajes();
         void determinarGanador();
         void inicializarJugador();
