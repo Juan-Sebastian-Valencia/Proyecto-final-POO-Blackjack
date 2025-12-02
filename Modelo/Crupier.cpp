@@ -1,6 +1,6 @@
 #include "Crupier.h"
 
-Crupier::Crupier(Baraja baraja) : Persona(), puntaje(0.0), mano({}), baraja(baraja) {}
+Crupier::Crupier(Baraja& baraja) : Persona(), puntaje(0.0), mano({}), baraja(baraja) {}
 
 std::vector<Carta> Crupier::getMano() const { return mano;}
 
@@ -37,4 +37,10 @@ void Crupier::logicaCrupier(){
         recibirCarta();
         calcularPuntaje();
     }
+}
+
+std::vector<Carta> Crupier::vaciarMano() {
+    std::vector<Carta> manoAux = mano;
+    mano.clear();
+    return manoAux;
 }

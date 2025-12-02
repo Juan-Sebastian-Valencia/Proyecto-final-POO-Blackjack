@@ -41,5 +41,3 @@ void Jugador::calcularPuntaje(){
     }
     setPuntaje(valorAux);
 }
-
-

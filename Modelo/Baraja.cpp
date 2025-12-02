@@ -1,4 +1,5 @@
 #include "Baraja.h"
+#include <iostream>
 
 Baraja::Baraja(){
     // Inicializa la baraja con las cartas de una baraja estandar de Blackjack
@@ -15,14 +16,21 @@ Baraja::Baraja(){
     }
 }
 
-Carta Baraja::sacarCartaBarajaInicial(){ 
+Carta Baraja::sacarCartaBarajaInicial(){
+    if (barajaInicial.empty()) {
+        std::cerr<<"Baraja inicial vacía";
+    }
     Carta cartaAux = barajaInicial.back();
     barajaInicial.pop_back();
     return cartaAux;
 }
 
 Carta Baraja::sacarCartaBarajaSegundaria(){
-    Carta cartaAux = barajaInicial.back();
+    if (barajaSegundaria.empty()) {
+        std::cerr<<"Baraja segundaria vacía";
+    }
+
+    Carta cartaAux = barajaSegundaria.back();
     barajaSegundaria.pop_back();
     return cartaAux;
 }

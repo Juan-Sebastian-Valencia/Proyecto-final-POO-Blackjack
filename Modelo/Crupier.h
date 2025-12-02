@@ -34,10 +34,10 @@ class Crupier : public Persona {
     private:
         double puntaje;
         std::vector<Carta> mano;
-        Baraja baraja;
+        Baraja& baraja;
 
     public:
-        Crupier(Baraja baraja);
+        Crupier(Baraja& baraja);
         std::vector<Carta> getMano() const;
         void repartirCarta(Jugador& jugador);
         void repartirCartaManoDividir(Jugador& jugador);
@@ -45,5 +45,7 @@ class Crupier : public Persona {
         void recibirCarta();
         void calcularPuntaje();
         void logicaCrupier();
+
+        std::vector<Carta> vaciarMano();
 };
 #endif // MODELO_CRUPIER_H
