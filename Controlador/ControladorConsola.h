@@ -24,9 +24,9 @@ Versión:                  1.0.0
 #ifndef CONTROLADOR_CONTROLADORCONSOLA_H
 #define CONTROLADOR_CONTROLADORCONSOLA_H
 
-#include "Modelo/Jugador.h"
-#include "Modelo/Crupier.h"
-#include "Vista/VistaConsola.h"
+#include "../Modelo/Jugador.h"
+#include "../Modelo/Crupier.h"
+#include "../Vista/VistaConsola.h"
 
 class ControladorConsola {
     private:
