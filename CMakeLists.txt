@@ -1,27 +1,23 @@
-cmake_minimum_required(VERSION 3.10)
-
-# Nombre del proyecto
+cmake_minimum_required(VERSION 3.25)
 project(Blackjack)
 
-# Estándar de C++
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# Incluir directorios de encabezados
-include_directories(
-    ${PROJECT_SOURCE_DIR}/Controlador
-    ${PROJECT_SOURCE_DIR}/Modelo
-    ${PROJECT_SOURCE_DIR}/Modelo/DataBase
-    ${PROJECT_SOURCE_DIR}/Vista
+set(SOURCES
+        main.cpp
+
+        Controlador/ControladorConsola.cpp
+
+        Modelo/Baraja.cpp
+        Modelo/Carta.cpp
+        Modelo/Crupier.cpp
+        Modelo/Jugador.cpp
+        Modelo/Persona.cpp
+        Modelo/Validaciones.cpp
+        #Modelo/DataBase/DataBaseTexto.cpp
+
+        Vista/VistaConsola.cpp
 )
 
-# Buscar todos los archivos .cpp del proyecto
-file(GLOB_RECURSE SOURCES
-    "${PROJECT_SOURCE_DIR}/*.cpp"
-)
-
-# Excluir el ejecutable existente para evitar errores
-list(REMOVE_ITEM SOURCES "${PROJECT_SOURCE_DIR}/ejecutable.exe")
-
-# Crear ejecutable
+# --- Ejecutable principal ---
 add_executable(Blackjack ${SOURCES})

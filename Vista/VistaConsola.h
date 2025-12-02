@@ -20,10 +20,10 @@ Versión:                  1.0.0
 #ifndef VISTA_VISTACONSOLA_H
 #define VISTA_VISTACONSOLA_H
 
-#include "Modelo/Carta.h"
-#include "Modelo/Jugador.h"
-#include "Modelo/Crupier.h"
-#include "Modelo/Validaciones.h"
+#include "../Modelo/Carta.h"
+#include "../Modelo/Jugador.h"
+#include "../Modelo/Crupier.h"
+#include "../Modelo/Validaciones.h"
 #include <string>
 #include <iostream>
 #include <cstdlib>  // Para la función system
